@@ -1,0 +1,6 @@
+@PolarisContacts.CreateService_HostAddress = http://localhost:5041
+
+GET {{PolarisContacts.CreateService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
