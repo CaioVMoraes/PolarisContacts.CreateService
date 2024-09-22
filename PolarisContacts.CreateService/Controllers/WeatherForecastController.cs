@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using PolarisContacts.Domain;
 
 namespace PolarisContacts.CreateService.Controllers
 {
