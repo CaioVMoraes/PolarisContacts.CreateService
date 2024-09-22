@@ -6,6 +6,6 @@ namespace PolarisContacts.Application.Interfaces.Services
 {
     public interface IEmailService
     {
-        //Task AddEmail(Email email);
+        Task AddEmail(Email email);
     }
 }

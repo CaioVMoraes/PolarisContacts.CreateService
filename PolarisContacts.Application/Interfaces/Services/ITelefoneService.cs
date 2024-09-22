@@ -6,6 +6,6 @@ namespace PolarisContacts.Application.Interfaces.Services
 {
     public interface ITelefoneService
     {
-        //Task AddTelefone(Telefone telefone);
+        Task AddTelefone(Telefone telefone);
     }
 }

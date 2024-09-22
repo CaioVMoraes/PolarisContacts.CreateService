@@ -6,6 +6,6 @@ namespace PolarisContacts.Application.Interfaces.Services
 {
     public interface IEnderecoService
     {
-        //Task AddEndereco(Endereco endereco);
+        Task AddEndereco(Endereco endereco);
     }
 }

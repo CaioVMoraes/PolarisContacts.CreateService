@@ -14,14 +14,14 @@ namespace PolarisContacts.Application.Services
         private readonly IContatoService _contatoService = contatoService;
         private readonly IRegiaoService _regiaoService = regiaoService;
 
-        //public async Task AddTelefone(Telefone telefone)
-        //{
-        //    if (telefone == null)
-        //    {
-        //        throw new ArgumentNullException(nameof(telefone));
-        //    }
+        public async Task AddTelefone(Telefone telefone)
+        {
+            if (telefone == null)
+            {
+                throw new ArgumentNullException(nameof(telefone));
+            }
 
-        //    await _telefoneRepository.AddTelefone(telefone);
-        //}
+            //await _telefoneRepository.AddTelefone(telefone);
+        }
     }
 }

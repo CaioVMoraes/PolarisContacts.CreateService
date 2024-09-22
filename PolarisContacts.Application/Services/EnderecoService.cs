@@ -12,14 +12,14 @@ namespace PolarisContacts.Application.Services
     {
         private readonly IEnderecoRepository _enderecoRepository = enderecoRepository;
 
-        //public async Task AddEndereco(Endereco endereco)
-        //{
-        //    if (endereco == null)
-        //    {
-        //        throw new ArgumentNullException(nameof(endereco));
-        //    }
+        public async Task AddEndereco(Endereco endereco)
+        {
+            if (endereco == null)
+            {
+                throw new ArgumentNullException(nameof(endereco));
+            }
 
-        //    await _enderecoRepository.AddEndereco(endereco);
-        //}
+            //await _enderecoRepository.AddEndereco(endereco);
+        }
     }
 }

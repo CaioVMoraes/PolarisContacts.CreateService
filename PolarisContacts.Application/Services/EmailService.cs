@@ -13,14 +13,14 @@ namespace PolarisContacts.Application.Services
         private readonly IEmailRepository _emailRepository = emailRepository;
         private readonly IContatoService _contatoService = contatoService;
 
-        //public async Task AddEmail(Email email)
-        //{
-        //    if (email == null)
-        //    {
-        //        throw new ArgumentNullException(nameof(email));
-        //    }
+        public async Task AddEmail(Email email)
+        {
+            if (email == null)
+            {
+                throw new ArgumentNullException(nameof(email));
+            }
 
-        //    await _emailRepository.AddEmail(email);
-        //}
+            //await _emailRepository.AddEmail(email);
+        }
     }
 }

@@ -6,6 +6,6 @@ namespace PolarisContacts.Application.Interfaces.Services
 {
     public interface ICelularService
     {
-        //Task AddCelular(Celular celular);
+        Task AddCelular(Celular celular);
     }
 }
