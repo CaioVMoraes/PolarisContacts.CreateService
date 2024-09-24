@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using PolarisContacts.Application.Interfaces.Services;
-using PolarisContacts.Application.Services;
+using PolarisContacts.CreateService.Application.Interfaces.Services;
+using PolarisContacts.Domain;
 
 namespace PolarisContacts.CreateService.Controllers
 {
@@ -11,20 +11,17 @@ namespace PolarisContacts.CreateService.Controllers
         private readonly ILogger<ContatoController> _logger = logger;
         private readonly IContatoService _contatoService = contatoService;
 
-        [HttpPost]
-        public bool Post()
+        [HttpPost("AddContato")]
+        public async Task<bool> AddContato(Contato contato)
         {
             try
             {
-                _contatoService.AddContato(new Domain.Contato());
+                return await _contatoService.AddContato(contato);
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
-
-            return true;
         }
     }
 }
