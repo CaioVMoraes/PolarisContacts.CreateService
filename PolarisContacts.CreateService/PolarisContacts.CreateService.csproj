@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="PolarisContacts.Domain" Version="1.0.1" />
     <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
@@ -16,6 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\PolarisContacts.CreateService.Application\PolarisContacts.CreateService.Application.csproj" />
     <ProjectReference Include="..\PolarisContacts.CreateService.CrossCutting.DependencyInjection\PolarisContacts.CreateService.CrossCutting.DependencyInjection.csproj" />
+    <ProjectReference Include="..\PolarisContacts.CreateService.Domain\PolarisContacts.CreateService.Domain.csproj" />
   </ItemGroup>
 
 </Project>

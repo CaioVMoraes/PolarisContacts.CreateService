@@ -8,7 +8,6 @@
     <PackageReference Include="Dapper" Version="2.1.35" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.2" />
     <PackageReference Include="PolarisContacts.DatabaseConnection" Version="1.0.0" />
-    <PackageReference Include="PolarisContacts.Domain" Version="1.0.1" />
     <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
     <PackageReference Include="System.Runtime" Version="4.3.1" />
@@ -16,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PolarisContacts.CreateService.Application\PolarisContacts.CreateService.Application.csproj" />
+    <ProjectReference Include="..\PolarisContacts.CreateService.Domain\PolarisContacts.CreateService.Domain.csproj" />
   </ItemGroup>
 
 </Project>

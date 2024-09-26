@@ -15,21 +15,25 @@ namespace PolarisContacts.CreateService.Controllers
         private readonly IRabbitMqProducer _rabbitMqProducer = rabbitMqProducer;
 
         [HttpPost("AddContato")]
-        public async Task<bool> AddContato(Contato contato)
+        [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
+        public IActionResult AddContato(Contato contato)
         {
             try
             {
-                bool isSucess = await _contatoService.AddContato(contato);
+                contato = _contatoService.ValidaContato(contato);
 
-                _logger.LogInformation("Publicando mensagem no RabbitMQ para o contato {ContatoId}", contato.Id);
+                // Serializa o objeto contato para JSON
                 var message = JsonConvert.SerializeObject(contato);
+
+                // Publica a mensagem no RabbitMQ
                 _rabbitMqProducer.Publish(message);
 
-                return isSucess;
+                return Ok("Mensagem publicada com sucesso.");
             }
             catch (Exception ex)
             {
-                throw ex;
+                // Tratamento de erro
+                return StatusCode(500, $"Erro ao publicar mensagem: {ex.Message}");
             }
         }
     }

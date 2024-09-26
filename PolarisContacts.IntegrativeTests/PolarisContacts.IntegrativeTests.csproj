@@ -20,7 +20,6 @@
     <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="8.0.8" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="PolarisContacts.Domain" Version="1.0.1" />
     <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.10" />
     <PackageReference Include="xunit" Version="2.9.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3">
@@ -30,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PolarisContacts.CreateService.Domain\PolarisContacts.CreateService.Domain.csproj" />
     <ProjectReference Include="..\PolarisContacts.CreateService\PolarisContacts.CreateService.csproj" />
   </ItemGroup>
 

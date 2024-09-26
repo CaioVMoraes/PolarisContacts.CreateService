@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 using PolarisContacts.CreateService.Application.Interfaces.Messaging;
+using PolarisContacts.CreateService.Domain.Settings;
 using RabbitMQ.Client;
 using System.Text;
 
@@ -9,9 +10,9 @@ namespace PolarisContacts.CreateService.Infrastructure.Messaging
     {
         private readonly IConnection _connection;
         private readonly IModel _channel;
-        private readonly PolarisContacts.Domain.Settings.RabbitMQ _rabbitMQSettings;
+        private readonly RabbitMqSettings _rabbitMQSettings;
 
-        public RabbitMqProducer(IOptions<PolarisContacts.Domain.Settings.RabbitMQ> rabbitMQSettings)
+        public RabbitMqProducer(IOptions<RabbitMqSettings> rabbitMQSettings)
         {
             _rabbitMQSettings = rabbitMQSettings.Value;
 
