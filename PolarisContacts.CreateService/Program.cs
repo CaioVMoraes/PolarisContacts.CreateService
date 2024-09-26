@@ -1,5 +1,4 @@
 using PolarisContacts.CreateService.CrossCutting.DependencyInjection;
-using PolarisContacts.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 

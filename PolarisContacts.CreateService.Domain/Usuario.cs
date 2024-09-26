@@ -19,6 +19,8 @@ namespace PolarisContacts.CreateService.Domain
 
         public string NovaSenha { get; set; }
 
+        public string ConfirmSenha { get; set; }
+
         public bool Ativo { get; set; }
     }
 }

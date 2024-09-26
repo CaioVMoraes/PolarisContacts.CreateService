@@ -1,16 +1,11 @@
-﻿using PolarisContacts.CreateService.Application.Interfaces.Repositories;
-using PolarisContacts.CreateService.Application.Interfaces.Services;
-using PolarisContacts.Domain;
-using System.Threading.Tasks;
-using static PolarisContacts.CrossCutting.Helpers.Exceptions.CustomExceptions;
+﻿using PolarisContacts.CreateService.Application.Interfaces.Services;
+using static PolarisContacts.CreateService.Helpers.Exceptions.CustomExceptions;
 
 namespace PolarisContacts.CreateService.Application.Services
 {
-    public class UsuarioService(IUsuarioRepository usuarioRepository) : IUsuarioService
+    public class UsuarioService : IUsuarioService
     {
-        private readonly IUsuarioRepository _usuarioRepository = usuarioRepository;
-
-        public async Task<bool> CreateUser(string login, string senha)
+        public void ValidaUsuario(string login, string senha)
         {
             if (string.IsNullOrEmpty(login))
             {
@@ -20,8 +15,6 @@ namespace PolarisContacts.CreateService.Application.Services
             {
                 throw new SenhaVaziaException();
             }
-
-            return await _usuarioRepository.CreateUser(login, senha);
         }
     }
 }

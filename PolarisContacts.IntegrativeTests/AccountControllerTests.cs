@@ -1,9 +1,4 @@
-﻿using Newtonsoft.Json;
-using PolarisContacts.Domain;
-using System.Text;
-
-
-public class AccountControllerTests : IClassFixture<IntegrationTestFixture>
+﻿public class AccountControllerTests : IClassFixture<IntegrationTestFixture>
 {
     private readonly HttpClient _client;
     private readonly IntegrationTestFixture _fixture;

@@ -2,7 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using PolarisContacts.CreateService.Application.Interfaces.Messaging;
 using PolarisContacts.CreateService.Application.Interfaces.Services;
-using PolarisContacts.Domain;
+using PolarisContacts.CreateService.Domain;
+using PolarisContacts.CreateService.Domain.Enuns;
 
 namespace PolarisContacts.CreateService.Controllers
 {
@@ -20,12 +21,17 @@ namespace PolarisContacts.CreateService.Controllers
         {
             try
             {
-                contato = _contatoService.ValidaContato(contato);
+                _contatoService.ValidaContato(contato);
 
-                // Serializa o objeto contato para JSON
-                var message = JsonConvert.SerializeObject(contato);
+                var entityMessage = new EntityMessage
+                {
+                    Operation = OperationType.Create,
+                    EntityType = EntityType.Usuario,
+                    EntityData = contato
+                };
 
-                // Publica a mensagem no RabbitMQ
+                var message = JsonConvert.SerializeObject(entityMessage);
+
                 _rabbitMqProducer.Publish(message);
 
                 return Ok("Mensagem publicada com sucesso.");

@@ -1,7 +1,7 @@
 ﻿using PolarisContacts.CreateService.Application.Interfaces.Services;
-using PolarisContacts.CrossCutting.Helpers;
-using PolarisContacts.Domain;
-using static PolarisContacts.CrossCutting.Helpers.Exceptions.CustomExceptions;
+using PolarisContacts.CreateService.Domain;
+using PolarisContacts.CreateService.Helpers;
+using static PolarisContacts.CreateService.Helpers.Exceptions.CustomExceptions;
 
 namespace PolarisContacts.CreateService.Application.Services
 {
@@ -18,16 +18,12 @@ namespace PolarisContacts.CreateService.Application.Services
                 throw new NomeObrigatorioException();
             }
 
-            contato.Ativo = true;
-
             if (contato.Telefones is not null)
             {
                 foreach (var telefone in contato.Telefones)
                 {
                     if (!Validacoes.IsValidTelefone(telefone.NumeroTelefone))
                         throw new TelefoneInvalidoException();
-
-                    telefone.Ativo = true;
                 }
             }
 
@@ -37,8 +33,6 @@ namespace PolarisContacts.CreateService.Application.Services
                 {
                     if (!Validacoes.IsValidCelular(celular.NumeroCelular))
                         throw new CelularInvalidoException();
-
-                    celular.Ativo = true;
                 }
             }
 
@@ -48,8 +42,6 @@ namespace PolarisContacts.CreateService.Application.Services
                 {
                     if (!Validacoes.IsValidEmail(email.EnderecoEmail))
                         throw new EmailInvalidoException();
-
-                    email.Ativo = true;
                 }
             }
 
@@ -59,8 +51,6 @@ namespace PolarisContacts.CreateService.Application.Services
                 {
                     if (!Validacoes.IsValidEndereco(endereco))
                         throw new EnderecoInvalidoException();
-
-                    endereco.Ativo = true;
                 }
             }
 

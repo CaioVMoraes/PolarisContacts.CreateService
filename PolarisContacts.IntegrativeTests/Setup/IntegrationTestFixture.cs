@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Data.Sqlite;
-using Xunit;
 
 public class IntegrationTestFixture : WebApplicationFactory<Program>
 {

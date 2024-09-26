@@ -1,4 +1,4 @@
-﻿using PolarisContacts.Domain;
+﻿using PolarisContacts.CreateService.Domain;
 
 namespace PolarisContacts.CreateService.Application.Interfaces.Services
 {

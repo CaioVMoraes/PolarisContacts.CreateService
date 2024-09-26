@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using PolarisContacts.Domain;
+using PolarisContacts.CreateService.Domain;
 using System.Text;
 
 public class HomeControllerTests : IClassFixture<IntegrationTestFixture>
@@ -48,7 +48,7 @@ public class HomeControllerTests : IClassFixture<IntegrationTestFixture>
             {
                 new Telefone
                 {
-                    IdRegiao = 1, 
+                    IdRegiao = 1,
                     NumeroTelefone = "5526-9799",
                     Ativo = true
                 }
@@ -78,7 +78,7 @@ public class HomeControllerTests : IClassFixture<IntegrationTestFixture>
         var contato = new Contato
         {
             Nome = "Contato de Teste",
-            IdUsuario = 2, 
+            IdUsuario = 2,
             Ativo = true,
             Celulares = new List<Celular>
             {
@@ -106,13 +106,13 @@ public class HomeControllerTests : IClassFixture<IntegrationTestFixture>
         var contato = new Contato
         {
             Nome = "Contato de Teste",
-            IdUsuario = 2, 
+            IdUsuario = 2,
             Ativo = true,
             Enderecos = new List<Endereco>
             {
                 new Endereco
                 {
-                    Logradouro = "Rua dos Cabiros", 
+                    Logradouro = "Rua dos Cabiros",
                     Numero = "36",
                     Cidade = "São Paulo",
                     Estado = "SP",
@@ -139,13 +139,13 @@ public class HomeControllerTests : IClassFixture<IntegrationTestFixture>
         var contato = new Contato
         {
             Nome = "Contato de Teste 2",
-            IdUsuario = 2, 
+            IdUsuario = 2,
             Ativo = true,
             Telefones = new List<Telefone>
             {
                 new Telefone
                 {
-                    IdRegiao = 1, 
+                    IdRegiao = 1,
                     NumeroTelefone = "5526-9799",
                     Ativo = true
                 }
@@ -167,12 +167,12 @@ public class HomeControllerTests : IClassFixture<IntegrationTestFixture>
         var contato = new Contato
         {
             Nome = "Contato de Teste 3",
-            IdUsuario = 2, 
+            IdUsuario = 2,
             Ativo = true,
             Emails = new List<Email>
             {
                 new Email
-                {                    
+                {
                     EnderecoEmail = "Jhonatanpsilva77@gmail.com",
                     Ativo = true
                 }
