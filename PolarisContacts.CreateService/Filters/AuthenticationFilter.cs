@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace PolarisContacts.Filters
+namespace PolarisContacts.CreateService.Filters
 {
     public class AuthenticationFilterAttribute : ActionFilterAttribute
     {
