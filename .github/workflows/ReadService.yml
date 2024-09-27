@@ -1,0 +1,43 @@
+name: PolarisContacts.CreateService CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        dotnet-version: ['8.0.x'] # Usando a versão 8.0 do .NET
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: ${{ matrix.dotnet-version }}
+
+    - name: Install dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Run Unit Tests
+      run: dotnet test --configuration Release --no-restore --logger "trx;LogFileName=TestResults/TestResults.trx" --collect:"XPlat Code Coverage"
+
+    - name: Publish Unit Test Results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: UnitTestResults
+        path: '**/TestResults/TestResults.trx'
