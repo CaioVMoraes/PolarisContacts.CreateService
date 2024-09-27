@@ -21,13 +21,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PolarisContacts.CreateServi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PolarisContacts.CreateService.Helpers", "PolarisContacts.CreateService.Helpers\PolarisContacts.CreateService.Helpers.csproj", "{8F94A69A-6AF8-438E-9C66-DCFD7D035BA3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "actions", "actions", "{136BCA6A-F987-4941-B77D-F661DA4D7CBF}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{1228FCE3-F87F-49B5-B857-DB7F8988ED34}"
-	ProjectSection(SolutionItems) = preProject
-		CreateService2.yml = CreateService2.yml
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,7 +67,6 @@ Global
 		{6690F4CB-1263-4DFA-8762-87437D9363D8} = {6044237B-EBCB-440D-98C2-B01256C07AFC}
 		{173252AE-0622-4856-9B0C-CA94A7476AC9} = {501D1775-F1BC-481F-AD5E-2C0846C99E54}
 		{8F94A69A-6AF8-438E-9C66-DCFD7D035BA3} = {501D1775-F1BC-481F-AD5E-2C0846C99E54}
-		{1228FCE3-F87F-49B5-B857-DB7F8988ED34} = {136BCA6A-F987-4941-B77D-F661DA4D7CBF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8B339194-DF7D-4B7B-A4E6-62ED5533C9F1}
