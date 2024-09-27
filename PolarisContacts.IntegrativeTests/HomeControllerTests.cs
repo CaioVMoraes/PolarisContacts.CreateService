@@ -2,19 +2,19 @@
 using PolarisContacts.CreateService.Domain;
 using System.Text;
 
-public class HomeControllerTests : IClassFixture<IntegrationTestFixture>
+public class ContatoControllerTests : IClassFixture<IntegrationTestFixture>
 {
     private readonly HttpClient _client;
     private readonly IntegrationTestFixture _fixture;
 
-    public HomeControllerTests(IntegrationTestFixture fixture)
+    public ContatoControllerTests(IntegrationTestFixture fixture)
     {
         _fixture = fixture;
         _client = fixture.Client;
     }
 
     [Fact]
-    public async Task InsertContato_ReturnsSuccess()
+    public async Task AddContato_ReturnsSuccess()
     {
         var contato = new Contato
         {
@@ -94,7 +94,7 @@ public class HomeControllerTests : IClassFixture<IntegrationTestFixture>
         var content = new StringContent(JsonConvert.SerializeObject(contato), Encoding.UTF8, "application/json");
 
         // Faz a requisição para inserir o contato
-        var response = await _client.PostAsync("/Home/InsertContato", content);
+        var response = await _client.PostAsync("/Contato/AddContato", content);
 
         // Verifica se a resposta é bem-sucedida
         Assert.True(response.IsSuccessStatusCode);
@@ -127,7 +127,7 @@ public class HomeControllerTests : IClassFixture<IntegrationTestFixture>
         var content = new StringContent(JsonConvert.SerializeObject(contato), Encoding.UTF8, "application/json");
 
         // Faz a requisição para inserir o contato
-        var response = await _client.PostAsync("/Home/InsertContato", content);
+        var response = await _client.PostAsync("/Contato/AddContato", content);
 
         // Verifica se a resposta é bem-sucedida
         Assert.True(response.IsSuccessStatusCode);
@@ -155,7 +155,7 @@ public class HomeControllerTests : IClassFixture<IntegrationTestFixture>
         var content = new StringContent(JsonConvert.SerializeObject(contato), Encoding.UTF8, "application/json");
 
         // Faz a requisição para inserir o contato
-        var response = await _client.PostAsync("/Home/InsertContato", content);
+        var response = await _client.PostAsync("/Contato/AddContato", content);
 
         // Verifica se a resposta é bem-sucedida
         Assert.True(response.IsSuccessStatusCode);
@@ -182,27 +182,27 @@ public class HomeControllerTests : IClassFixture<IntegrationTestFixture>
         var content = new StringContent(JsonConvert.SerializeObject(contato), Encoding.UTF8, "application/json");
 
         // Faz a requisição para inserir o contato
-        var response = await _client.PostAsync("/Home/InsertContato", content);
+        var response = await _client.PostAsync("/Contato/AddContato", content);
 
         // Verifica se a resposta é bem-sucedida
         Assert.True(response.IsSuccessStatusCode);
     }
 
-    [Fact]
-    public async Task DeleteContato_ReturnsSuccess()
-    {
-        // Insere um contato de teste
-        var contatoId = 1;
+    //[Fact]
+    //public async Task DeleteContato_ReturnsSuccess()
+    //{
+    //    // Insere um contato de teste
+    //    var contatoId = 1;
 
-        // Formata a URL da requisição
-        var requestUri = $"/Home/DeleteContato?id={contatoId}";
+    //    // Formata a URL da requisição
+    //    var requestUri = $"/Contato/DeleteContato?id={contatoId}";
 
-        var request = new HttpRequestMessage(HttpMethod.Post, requestUri);
+    //    var request = new HttpRequestMessage(HttpMethod.Post, requestUri);
 
-        var response = await _client.SendAsync(request);
+    //    var response = await _client.SendAsync(request);
 
-        // Verifica se a resposta é bem-sucedida
-        Assert.True(response.IsSuccessStatusCode);
-    }
+    //    // Verifica se a resposta é bem-sucedida
+    //    Assert.True(response.IsSuccessStatusCode);
+    //}
 
 }

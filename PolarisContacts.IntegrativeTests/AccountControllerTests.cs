@@ -10,24 +10,23 @@
     }
 
     [Fact]
-    public async Task ChangePassword_ReturnSuccess()
+    public async Task CreateUser_ReturnSuccess()
     {
         // Define os dados de teste
         string login = "Login Teste";
-        string oldPassword = "1";
-        string newPassword = "newPassword";
-        string confirmNewPassword = "newPassword";
+        string senha = "102030";       
 
         // Cria a URL com os parâmetros na query string
-        var url = $"Account/ChangePassword?login={login}&oldPassword={oldPassword}&newPassword={newPassword}&confirmNewPassword={confirmNewPassword}";
+        var url = $"Usuario/CreateUser?login={login}&senha={senha}";
 
         // Faz a requisição para alterar a senha via POST
-        var response = await _client.PostAsync(url, null); // Passa null no conteúdo, pois os dados estão na query string
+        var response = await _client.PostAsync(url, null); 
 
         // Lê o conteúdo da resposta
         var responseContent = await response.Content.ReadAsStringAsync();
 
         // Verifica se a resposta é bem-sucedida
         Assert.True(response.IsSuccessStatusCode);
+        Assert.Equal("Mensagem publicada com sucesso.", responseContent);
     }
 }
