@@ -43,9 +43,6 @@ jobs:
     - name: Run Unit Tests
       run: dotnet test --configuration Release --no-restore --logger "trx;LogFileName=TestResults/TestResults.trx" --collect:"XPlat Code Coverage"
 
-    - name: Run Integration Tests
-      run: dotnet test PolarisContacts.CreateService.IntegrationTests/PolarisContacts.CreateService.IntegrationTests.csproj --configuration Release --no-restore --logger "trx;LogFileName=IntegrationTestResults/IntegrationTestResults.trx" --collect:"XPlat Code Coverage"
-
     - name: Publish Unit Test Results
       uses: actions/upload-artifact@v3
       if: always()
