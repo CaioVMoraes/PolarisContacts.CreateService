@@ -17,17 +17,17 @@ namespace PolarisContacts.CreateService.Controllers
 
         [HttpPost("CreateUser")]
         [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
-        public IActionResult CreateUser([FromQuery] string login, [FromQuery] string senha)
+        public IActionResult CreateUser(Usuario usuario)
         {
             try
             {
-                _usuarioService.ValidaUsuario(login, senha);
+                _usuarioService.ValidaUsuario(usuario.Login, usuario.Senha);
 
                 var entityMessage = new EntityMessage
                 {
                     Operation = OperationType.Create,
                     EntityType = EntityType.Usuario,
-                    EntityData = new Usuario { Login = login, Senha = senha }
+                    EntityData = usuario
                 };
 
                 var message = JsonConvert.SerializeObject(entityMessage);

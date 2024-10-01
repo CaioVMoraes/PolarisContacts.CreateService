@@ -26,7 +26,7 @@ namespace PolarisContacts.CreateService.Controllers
                 var entityMessage = new EntityMessage
                 {
                     Operation = OperationType.Create,
-                    EntityType = EntityType.Usuario,
+                    EntityType = EntityType.Contato,
                     EntityData = contato
                 };
 
@@ -38,7 +38,6 @@ namespace PolarisContacts.CreateService.Controllers
             }
             catch (Exception ex)
             {
-                // Tratamento de erro
                 return StatusCode(500, $"Erro ao publicar mensagem: {ex.Message}");
             }
         }
