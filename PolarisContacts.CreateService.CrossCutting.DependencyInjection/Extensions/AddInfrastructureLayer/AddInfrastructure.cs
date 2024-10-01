@@ -11,7 +11,7 @@ public static partial class AddInfrastructureLayerExtensions
         services.AddBindedSettings<RabbitMqSettings>();
 
     public static IServiceCollection AddRepositories(this IServiceCollection services) =>
-        services.AddTransient<IRabbitMqProducer, RabbitMqProducer>();
+        services.AddScoped<IRabbitMqProducer, RabbitMqProducer>();
 
     public static IServiceCollection AddInfrastructure(this IServiceCollection services) =>
         services
