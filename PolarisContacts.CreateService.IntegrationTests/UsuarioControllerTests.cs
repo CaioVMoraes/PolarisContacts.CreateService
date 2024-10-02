@@ -1,4 +1,8 @@
-﻿namespace PolarisContacts.CreateService.IntegrationTests
+﻿using Newtonsoft.Json;
+using PolarisContacts.CreateService.Domain;
+using System.Text;
+
+namespace PolarisContacts.CreateService.IntegrationTests
 {
     public class UsuarioControllerTests : IClassFixture<IntegrationTestFixture>
     {
@@ -15,14 +19,20 @@
         public async Task CreateUser_ReturnSuccess()
         {
             // Define os dados de teste
-            string login = "Login Teste";
-            string senha = "102030";
+            var usuario = new Usuario
+            {
+                Login = "Login Teste",
+                Senha = "102030",
+                NovaSenha = "123456",
+                ConfirmSenha = "123456",
+                Ativo = true
+            };
 
-            // Cria a URL com os parâmetros na query string
-            var url = $"Usuario/CreateUser?login={login}&senha={senha}";
+            // Serializa o objeto Usuario para JSON
+            var jsonContent = new StringContent(JsonConvert.SerializeObject(usuario), Encoding.UTF8, "application/json");
 
-            // Faz a requisição para alterar a senha via POST
-            var response = await _client.PostAsync(url, null);
+            // Faz a requisição para criar o usuário via POST
+            var response = await _client.PostAsync("Usuario/CreateUser", jsonContent);
 
             // Lê o conteúdo da resposta
             var responseContent = await response.Content.ReadAsStringAsync();
