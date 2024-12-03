@@ -8,7 +8,7 @@ using PolarisContacts.CreateService.Domain.Enuns;
 namespace PolarisContacts.CreateService.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("Create/[controller]")]
     public class ContatoController(ILogger<ContatoController> logger, IContatoService contatoService, IRabbitMqProducer rabbitMqProducer) : ControllerBase
     {
         private readonly ILogger<ContatoController> _logger = logger;

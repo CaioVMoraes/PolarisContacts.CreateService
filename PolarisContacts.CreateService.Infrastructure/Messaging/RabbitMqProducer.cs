@@ -19,6 +19,7 @@ namespace PolarisContacts.CreateService.Infrastructure.Messaging
             var factory = new ConnectionFactory()
             {
                 HostName = _rabbitMQSettings.Host,
+                Port = _rabbitMQSettings.Port,
                 UserName = _rabbitMQSettings.Username,
                 Password = _rabbitMQSettings.Password
             };
