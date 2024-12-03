@@ -68,7 +68,7 @@ namespace PolarisContacts.CreateService.IntegrationTests
             var content = new StringContent(JsonConvert.SerializeObject(contato), Encoding.UTF8, "application/json");
 
             // Faz a requisição para inserir o contato
-            var response = await _client.PostAsync("/Contato/AddContato", content);
+            var response = await _client.PostAsync("/Create/Contato/AddContato", content);
 
             // Verifica se a resposta é bem-sucedida
             Assert.True(response.IsSuccessStatusCode);
@@ -96,7 +96,7 @@ namespace PolarisContacts.CreateService.IntegrationTests
             var content = new StringContent(JsonConvert.SerializeObject(contato), Encoding.UTF8, "application/json");
 
             // Faz a requisição para inserir o contato
-            var response = await _client.PostAsync("/Contato/AddContato", content);
+            var response = await _client.PostAsync("/Create/Contato/AddContato", content);
 
             // Verifica se a resposta é bem-sucedida
             Assert.True(response.IsSuccessStatusCode);
@@ -129,7 +129,7 @@ namespace PolarisContacts.CreateService.IntegrationTests
             var content = new StringContent(JsonConvert.SerializeObject(contato), Encoding.UTF8, "application/json");
 
             // Faz a requisição para inserir o contato
-            var response = await _client.PostAsync("/Contato/AddContato", content);
+            var response = await _client.PostAsync("/Create/Contato/AddContato", content);
 
             // Verifica se a resposta é bem-sucedida
             Assert.True(response.IsSuccessStatusCode);
@@ -157,7 +157,7 @@ namespace PolarisContacts.CreateService.IntegrationTests
             var content = new StringContent(JsonConvert.SerializeObject(contato), Encoding.UTF8, "application/json");
 
             // Faz a requisição para inserir o contato
-            var response = await _client.PostAsync("/Contato/AddContato", content);
+            var response = await _client.PostAsync("/Create/Contato/AddContato", content);
 
             // Verifica se a resposta é bem-sucedida
             Assert.True(response.IsSuccessStatusCode);
@@ -184,7 +184,7 @@ namespace PolarisContacts.CreateService.IntegrationTests
             var content = new StringContent(JsonConvert.SerializeObject(contato), Encoding.UTF8, "application/json");
 
             // Faz a requisição para inserir o contato
-            var response = await _client.PostAsync("/Contato/AddContato", content);
+            var response = await _client.PostAsync("/Create/Contato/AddContato", content);
 
             // Verifica se a resposta é bem-sucedida
             Assert.True(response.IsSuccessStatusCode);

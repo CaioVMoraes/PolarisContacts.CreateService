@@ -10,10 +10,13 @@ public class IntegrationTestFixture : WebApplicationFactory<Program>
     public IntegrationTestFixture()
     {
         // Configura o ambiente de teste
-        Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Test");
+        Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Development");
 
         // Configura o WebApplicationFactory e registra o banco de dados em memória
-        Client = CreateClient();
+        Client = CreateClient(new WebApplicationFactoryClientOptions
+        {
+            BaseAddress = new Uri("http://localhost:8084") // Atualize a URL base
+        });
     }
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)

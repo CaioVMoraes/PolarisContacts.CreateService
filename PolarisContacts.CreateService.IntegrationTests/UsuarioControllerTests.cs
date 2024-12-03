@@ -32,7 +32,7 @@ namespace PolarisContacts.CreateService.IntegrationTests
             var jsonContent = new StringContent(JsonConvert.SerializeObject(usuario), Encoding.UTF8, "application/json");
 
             // Faz a requisição para criar o usuário via POST
-            var response = await _client.PostAsync("Usuario/CreateUser", jsonContent);
+            var response = await _client.PostAsync("/Create/Usuario/CreateUser", jsonContent);
 
             // Lê o conteúdo da resposta
             var responseContent = await response.Content.ReadAsStringAsync();
