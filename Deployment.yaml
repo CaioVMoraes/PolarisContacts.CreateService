@@ -19,3 +19,12 @@ spec:
           image: caiovsk/createservice:latest  # Certifique-se de que a imagem está no Docker Hub
           ports:
             - containerPort: 8082  # Porta exposta no contêiner
+          env:  # Configurações de ambiente, incluindo o RabbitMQ
+            - name: RabbitMqSettings__Host
+              value: "rabbitmq"
+            - name: RabbitMqSettings__Port
+              value: "5672"
+            - name: RabbitMqSettings__Username
+              value: "guest"
+            - name: RabbitMqSettings__Password
+              value: "guest"
